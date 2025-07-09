@@ -32,7 +32,7 @@ project-root/
 ├── diagrams/
 │ ├── architecture-overview.png
 │ ├── gns3-topology.png
-│ └── ansible-flowchart.svg
+│ 
 ├── docs/
 │ ├── deployment.md
 │ └── usage.md
