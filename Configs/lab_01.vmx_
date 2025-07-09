@@ -1,0 +1,32 @@
+.encoding = "UTF-8"
+config.version = "8"
+virtualHW.version = "17"
+displayName = "lab_01"
+guestOS = "ubuntu-64"
+memSize = "2048"
+numvcpus = "2"
+
+scsi0.present = "TRUE"
+scsi0.virtualDev = "pvscsi"
+scsi0:0.present = "TRUE"
+scsi0:0.deviceType = "scsi-hardDisk"
+scsi0:0.fileName = "lab_01.vmdk"
+
+ethernet0.present = "TRUE"
+ethernet0.virtualDev = "vmxnet3"
+ethernet0.networkName = "VM Network"
+ethernet0.addressType = "static"
+ethernet0.address = "00:0c:19:c1:da:5e"
+ethernet0.uptCompatibility = "TRUE"
+
+ide0:0.present = "TRUE"
+ide0:0.deviceType = "cdrom-image"
+ide0:0.fileName = "ubuntu-18.04.4-desktop-amd64.iso"
+ide0:0.startConnected = "TRUE"
+
+svga.present = "TRUE"
+vmci0.present = "TRUE"
+hpet0.present = "TRUE"
+floppy0.present = "FALSE"
+
+tools.syncTime = "FALSE"
