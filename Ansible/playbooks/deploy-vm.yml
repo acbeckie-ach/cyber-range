@@ -1,0 +1,34 @@
+# create a VM
+
+- vmware_guest:
+    hostname: "{{ VMWARE_HOST}}"
+    username: "{{VMWARE_USER}}"
+    password: "{{VMWARE_PASSWORD}}"
+    validate_certs: no
+    folder: /ha-datacenter/vm/
+    name: "{{ item }}"
+    state: poweredon
+    guest_id: ubuntu64Guest
+    esxi_hostname: "{{ esxi_host }}"
+    cdrom:
+      - iso_path: "[Datastore_2]/ubuntu-18.04.4-desktop-amd64.iso"
+        type: "iso"
+        controller_number: 0
+        unit_number: 0
+    disk:
+      - size_gb: 15
+        type: thin
+        datastore: Datastore_2
+    hardware:
+      memory_mb: '{{ guest_vram }}'
+      num_cpus: '{{ guest_vcpu }}'
+    networks:
+      - name: '{{ vm_network }}'
+        ip: '{{ inventory_hostname }}'
+        netmask: '{{ guest_netmask }}'
+        gateway: '{{ guest_gateway }}'
+        dns_servers:
+          - '{{ guest_dns_server1 }}'
+    wait_for_ip_address: yes
+  delegate_to: localhost
+  register: deploy_vm

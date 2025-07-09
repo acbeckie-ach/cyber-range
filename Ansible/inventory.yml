@@ -1,0 +1,13 @@
+[esxi]
+esxi_host ansible_host=192.168.x.x ansible_user=root ansible_password=YourESXiPassword
+
+[control_terminal]
+control ansible_host=192.168.x.x ansible_user=gns3 ansible_password=YourVMPassword
+
+[vms]
+lab_01 ansible_host=192.168.x.x
+lab_02 ansible_host=192.168.x.x
+lab_03 ansible_host=192.168.x.x
+lab_04 ansible_host=192.168.x.x
+lab_06 ansible_host=192.168.x.x
+

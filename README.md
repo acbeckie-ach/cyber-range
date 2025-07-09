@@ -18,6 +18,26 @@ The project integrates:
 - GNS3 for emulated network topologies
 
 # Repository Structure
+
+project-root/
+├── ansible/
+│ ├── inventory.yml
+│ ├── playbooks/
+│ │ ├── deploy.yml
+│ │ └── configure_services.yml
+├── configs/
+│ ├── lab_01.vmx
+│ ├── lab_02.vmx
+│ └── ...
+├── diagrams/
+│ ├── architecture-overview.png
+│ ├── gns3-topology.png
+│ └── ansible-flowchart.svg
+├── docs/
+│ ├── deployment.md
+│ └── usage.md
+└── README.md
+
 - `configs/` — `.vmx` files for each lab
 - `diagrams/` — Vswitch, Ansible and sceanrio topology diagrams
 - `deployment/` — Ansible playbooks for VM creation, app deployment and security tests

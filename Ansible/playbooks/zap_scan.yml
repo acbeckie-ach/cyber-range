@@ -1,0 +1,30 @@
+---
+- name: OWASP ZAP Scan Playbook
+  hosts: localhost
+  vars:
+    scan_name: zap_scan_container
+    owasp_zap_image_name: owasp/zap2docker-stable
+    website_url: http://example.com
+    scan_report: scan_report.html
+    reports_location: /tmp/zap_reports
+
+  tasks:
+    - name: running owasp zap full scan container against "{{ website_url }}"
+      become: yes
+      docker_container:
+        name: "{{ scan_name }}"
+        image: "{{ owasp_zap_image_name }}"
+        interactive: yes
+        auto_remove: yes
+        state: started
+        volumes:
+          - "{{ reports_location }}:/zap/wrk:rw"
+        command: "zap-full-scan.py -t {{ website_url }} -r {{ scan_report }}"
+
+    - name: getting raw output of the scan
+      become: yes
+      raw: "docker logs -f {{ scan_name }}"
+      register: scan_output
+
+    - debug:
+        msg: "{{ scan_output }}"
