@@ -12,8 +12,7 @@ This folder contains `.vmx` configuration files for the virtual machines used in
 | `lab_04.vmx`  | WebGoat + Contrast Security            |
 | `lab_05.vmx`  | Nessus scanning node                   |
 | `gns3_lab.vmx`| GNS3 VM for emulated network topology  |
-| `ansible_control_node` |Manages deployment and 
- ochestration of all cyber range scenarios 		 |
+| `ansible_control_node` |Manages deployment and ochestration of all cyber range scenarios |
 
 > The `.vmx` files do not include virtual disk files (`.vmdk`). 
 
