@@ -31,23 +31,17 @@ the Contrast Security Agent was deployed to monitor HTTP interactions,
 track user input, and flag potential vulnerabilities during execution. 
 This method enables detection of real-time security risks that may not be caught by static analysis or conventional scanners.
 
-- Setup
-The Contrast agent was integrated with the WebGoat container environment. Once deployed, it began monitoring for:
+# Setup
+- The Contrast agent was integrated with the WebGoat container environment. Once deployed, it began monitoring for:
+- Injection attacks
+- Authentication and session issues
+- Misconfigurations
+- Insecure data handling
 
-Injection attacks
-
-Authentication and session issues
-
-Misconfigurations
-
-Insecure data handling
-
-- Visual Results
-Screenshots of the Contrast Security dashboard showing these results are included:
-
-docs/screenshots/contrast-overview.png
-
-docs/screenshots/contrast-sql-detail.png
+# Visual Results
+- Screenshots of the Contrast Security dashboard showing these results are included:
+- docs/screenshots/contrast-overview.png
+- docs/screenshots/contrast-sql-detail.png
 
 ## WordPress Web Server Scan (Nikto)
 - scan task located at Ansible/Playbooks/nikto-scan.yml
@@ -59,16 +53,16 @@ docs/screenshots/contrast-sql-detail.png
 Example results: [nikto-results1.png, nikto-results2.png]
 
 ## Infection Monkey Network Attack Simulation Summary
-Scan Tool: Infection Monkey
-Scope: Full internal network
-Visual Output: Infection Map showing attacker behavior simulation
+- Scan Tool: Infection Monkey
+- Scope: Full internal network
+- Visual Output: Infection Map showing attacker behavior simulation
 
-Key Findings:
+# Key Findings:
 - 5 machines discovered on the network.
 - 2 machines successfully breached.
 - 40% exploitation rate, indicating notable lateral movement potential.
 
-Exploitation Paths:
+# Exploitation Paths:
 - The monkey exploited two machines after performing scanning, then moved laterally using tunneling techniques.
 - The attack paths are color-coded:
   Red: Exploitation
@@ -93,3 +87,9 @@ Exploitation Paths:
 - 40% of discovered systems were exploited
 
 - Screenshot is located at 
+
+### Metasploit & Nmap
+- Open ports (22 on router, 23/80/5000/8000 on HTTP server)
+- Identified Cisco SSH version, ready for targeted attacks
+
+-Screenshot located at 
