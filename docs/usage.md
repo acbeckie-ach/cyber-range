@@ -56,4 +56,40 @@ docs/screenshots/contrast-sql-detail.png
 - The output is stored in an HTML file and fetched to the Ansible control node at:
   wordpress/lab_03/tmp/{{ report_name }}
 
-Example results: [insert screenshot from report]
+Example results: [nikto-results1.png, nikto-results2.png]
+
+## Infection Monkey Network Attack Simulation Summary
+Scan Tool: Infection Monkey
+Scope: Full internal network
+Visual Output: Infection Map showing attacker behavior simulation
+
+Key Findings:
+- 5 machines discovered on the network.
+- 2 machines successfully breached.
+- 40% exploitation rate, indicating notable lateral movement potential.
+
+Exploitation Paths:
+- The monkey exploited two machines after performing scanning, then moved laterally using tunneling techniques.
+- The attack paths are color-coded:
+  Red: Exploitation
+  Orange: Scanning
+  Blue: Tunneling
+  Grey: Island communication (no exploitation)
+
+- The screenshot is located at docs/screenshot/infection-monkey attack.png
+
+## Infection Monkey – Network Security Assessment
+
+- Tool: Infection Monkey
+- Run Time: 29/06/2021 22:00:54
+- Duration: 24 minutes and 47 seconds
+- Origin Host: caldera.vsecurity.com
+- Status: Critical security issues were detected
+
+# Summary
+- 5 hosts discovered
+- 2 hosts breached
+- Propagation completed across all reachable machines
+- 40% of discovered systems were exploited
+
+- Screenshot is located at 
