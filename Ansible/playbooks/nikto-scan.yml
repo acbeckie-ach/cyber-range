@@ -1,0 +1,14 @@
+tasks:
+  - name: Nikto scanning in action
+    # Output available in csv, html, msf+, nbe, txt, xml formats
+    command: "/usr/share/nikto/program/nikto.pl -h {{ domain_name }} -o /tmp/{{ domain_name }}-report.html"
+
+  - name: downloading the report
+    fetch:
+      src: "/tmp/{{ domain_name }}-report.html"
+      dest: "wordpress/lab_03/tmp/{{ report_name }}"
+      flat: yes
+      ignore_errors: yes
+
+  - debug:
+      msg: "Report can be found at {{ report_name }}"
